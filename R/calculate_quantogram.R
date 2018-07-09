@@ -6,7 +6,7 @@
 #' @export
 #'
 calculate_quantogram = function(x,
-                                params=CONSTANTS_QUANTOGRAM) {
+                                params=getOption("CONSTANTS_QUANTOGRAM")) {
 
   if (4 != sum(c("RNG_START", "RNG_END", "STEP", "Q_MIN") %in% names(params))) {
     print("Incorrect number of parameters")
