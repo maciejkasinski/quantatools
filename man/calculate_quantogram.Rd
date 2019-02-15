@@ -4,7 +4,7 @@
 \alias{calculate_quantogram}
 \title{Calculate Kendall's cosine quantogram}
 \usage{
-calculate_quantogram(x, params = CONSTANTS_QUANTOGRAM)
+calculate_quantogram(x, params = getOption("CONSTANTS_QUANTOGRAM"))
 }
 \arguments{
 \item{x}{numeric vector of measurement values}
