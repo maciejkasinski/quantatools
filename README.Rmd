@@ -1,16 +1,24 @@
+---
+output: github_document
+---
 
-quantatools
-===========
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
 
+# quantatools
 [![DOI](https://zenodo.org/badge/140330551.svg)](https://zenodo.org/badge/latestdoi/140330551)
 
 Analysis of quantum in archaeological data with cosine quantogram and related statistical methods.
 
-Installation
-------------
+## Installation
 
 You can install quantatools from github with:
 
-``` r
+```{r gh-installation, eval = FALSE}
 devtools::install_github("maciejkasinski/quantatools", dependencies = FALSE)
 ```
