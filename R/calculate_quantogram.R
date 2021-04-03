@@ -10,18 +10,11 @@
 #'
 #' @examples
 calculate_quantogram <- function(x,
-                                 measurement_error = FALSE,
-                                 params = getOption("CONSTANTS_QUANTOGRAM")) {
+                                params = getOption("CONSTANTS_QUANTOGRAM")) {
 
   if (4 != sum(c("RNG_START", "RNG_END", "STEP", "Q_MIN") %in% names(params))) {
     print("Incorrect number of parameters")
     return(NULL)
-  }
-
-  if (is.numeric(measurement_error)) {
-    x <- measerr_correction(x = x,
-                            measurement_error = measurement_error,
-                            params = params)
   }
 
   A <- sqrt(2 / length(x))
@@ -35,8 +28,7 @@ calculate_quantogram <- function(x,
                         FUN.VALUE = numeric(1),
                         FUN = function(y) get_fofq(try_q = y,
                                                    x = x,
-                                                   params = params,
-                                                   A = A))
+                                                   params = params))
   return(results)
 }
 
@@ -51,7 +43,7 @@ calculate_quantogram <- function(x,
 #' @export
 #'
 #' @examples
-get_fofq <- function(try_q, params, x, A) {
+get_fofq <- function(try_q, params, x) {
   q <- try_q
   if (q < params$Q_MIN) {
     f_q <- 0
