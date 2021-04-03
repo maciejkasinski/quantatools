@@ -7,9 +7,14 @@
 calculate_quantogram(x, params = getOption("CONSTANTS_QUANTOGRAM"))
 }
 \arguments{
-\item{x}{numeric vector of measurement values}
+\item{x}{A numeric vector of measurement values from which
+the quantogram should be calculated}
 
-\item{params}{cosine quantogram parameters including "RNG_START", "RNG_END", "STEP", "Q_MIN"}
+\item{params}{cosine quantogram parameters
+including "RNG_START", "RNG_END", "STEP", "Q_MIN"}
+}
+\value{
+a data frame with quanta and f(q)
 }
 \description{
 Calculate Kendall's cosine quantogram

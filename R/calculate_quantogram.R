@@ -28,7 +28,8 @@ calculate_quantogram <- function(x,
                         FUN.VALUE = numeric(1),
                         FUN = function(y) get_fofq(try_q = y,
                                                    x = x,
-                                                   params = params))
+                                                   params = params,
+                                                   A = A))
   return(results)
 }
 
@@ -43,7 +44,7 @@ calculate_quantogram <- function(x,
 #' @export
 #'
 #' @examples
-get_fofq <- function(try_q, params, x) {
+get_fofq <- function(try_q, params, x, A) {
   q <- try_q
   if (q < params$Q_MIN) {
     f_q <- 0
